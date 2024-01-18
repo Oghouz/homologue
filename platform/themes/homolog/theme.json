@@ -1,0 +1,10 @@
+{
+    "id": "botble/ninico",
+    "name": "Homolog",
+    "namespace": "Theme\\Ninico\\",
+    "description": "Homolog Paris",
+    "author": "Homolog Paris",
+    "url": "https://homolog.fr",
+    "version": "1.0.0",
+    "required_plugins": []
+}
