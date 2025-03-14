@@ -106,9 +106,9 @@
 
                         {!! apply_filters('after_contact_form', null) !!}
 
-                        <div class="tpcontact__submit">
-                            <button type="submit" class="tp-btn tp-color-btn tp-wish-cart">
-                                {{ __('Get A Quote') }}
+                        <div class="tpcontact__submit text-center">
+                            <button type="submit" class="btn btn-dark">
+                                {{ __('Send') }}
                                 <i class="fal fa-long-arrow-right"></i>
                             </button>
                         </div>

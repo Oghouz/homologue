@@ -62,7 +62,7 @@
         <div class="row align-items-center">
             <div class="col-3 d-flex align-items-center">
                 <div class="flex-auto header-canvas">
-                    <button class="tp-menu-toggle" title="open">
+                    <button class="tp-menu-toggle text-light" title="open">
                         <i class="far fa-bars"></i>
                     </button>
                 </div>
@@ -71,7 +71,13 @@
                 <div class="col-6">
                     <div class="text-center logo">
                         <a href="{{ route('public.index') }}">
-                            <img src="{{ RvMedia::getImageUrl($logo) }}" alt="{{ theme_option('site_title') }}">
+                            <a href="{{ route('public.index') }}" id="home_page_logo_text" style="color: white">
+                                <sapn style="font-size: 1.5em;font-family: emoji;">HOMOLOG</sapn>
+                                <br>
+                                <span style="font-size: 0.9em;font-family: emoji;">PARIS</span>
+                                {{--                                    {{ RvMedia::image($logo, theme_option('site_title')) }}--}}
+                            </a>
+{{--                            <img src="{{ RvMedia::getImageUrl($logo) }}" alt="{{ theme_option('site_title') }}">--}}
                         </a>
                     </div>
                 </div>
@@ -79,7 +85,7 @@
             @if (is_plugin_active('ecommerce'))
                 <div class="col-3">
                     <div class="header-meta-info d-flex align-items-center justify-content-end ml-25">
-                        <button class="header-cart p-relative tp-search-sidebar-toggle" title="search">
+                        <button class="header-cart p-relative tp-search-sidebar-toggle text-light" title="search">
                             <i class="fal fa-search"></i>
                         </button>
                     </div>
@@ -91,8 +97,7 @@
 
 <div class="tpsideinfo">
     <button class="tpsideinfo__close">
-        {{ __('Close') }}
-        <i class="ml-10 fal fa-times"></i>
+        <i class="ml-10 fal fa-2x fa-times"></i>
     </button>
 
     <div class="tpsideinfo__nabtab mb-4 mt-30">
@@ -126,12 +131,12 @@
         </div>
     @endif
 
-    <div class="tpsideinfo__switcher navbar-collapse collapse show mb-4" id="navbarSupportedContent" style="">
-        <ul class="mb-2 navbar-nav me-auto mb-lg-0">
-            {!! Theme::partial('language-switcher', ['mobile' => true]) !!}
-            {!! Theme::partial('currency-switcher', ['mobile' => true]) !!}
-        </ul>
-    </div>
+{{--    <div class="tpsideinfo__switcher navbar-collapse collapse show mb-4" id="navbarSupportedContent" style="">--}}
+{{--        <ul class="mb-2 navbar-nav me-auto mb-lg-0">--}}
+{{--            {!! Theme::partial('language-switcher', ['mobile' => true]) !!}--}}
+{{--            {!! Theme::partial('currency-switcher', ['mobile' => true]) !!}--}}
+{{--        </ul>--}}
+{{--    </div>--}}
 </div>
 
 <div class="body-overlay"></div>
