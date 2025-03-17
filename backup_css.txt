@@ -1,0 +1,307 @@
+::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 5px;
+}
+.header-top: { 
+  display: none;
+}
+.home_page_background_img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+.background-home-slider {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.home-mobile-bg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.header-sticky {
+  /*background-color: transparent;*/
+}
+.space-bg {
+    background: #ffffff00;
+}
+.main-menu ul>li {
+    display: block;
+}
+.mainmenu__main>.main-menu a {
+  padding: 3px 0;
+  font-size: 10px;
+  color: #c2c2c2;
+}
+.mainmenu__main {
+    margin-inline-start: 39px;
+}
+.main-menu ul>li {
+    margin-inline-end: 28px;
+}
+.header-menu-li {
+  list-style: none;
+  font-size: 11px;
+  font-weight: bold;
+  color: #c2c2c2;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+.header-menu-li > a {
+  margin-inline-start: 0;
+  font-weight: bold;
+  font-size: 11px;
+}
+.header-menu-li > button {
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.header-menu-li:hover {
+  color: var(--tp-text-primary);;
+  font-size: 13px;
+}
+.sticky_header_menu > ul > li > a {
+  color: #000000!important;
+}
+
+@media (min-width: 991px) {
+  .swiper {
+    height: 770px;
+  }
+}
+@media (max-width: 991px) {
+  .swiper {
+    height: 550px;
+  }
+}
+/* CART RIGHT */
+.tpcartinfo {
+    width: 448px;
+}
+
+/* SEARCH SIDEBAR */
+.search-sidebar {
+    position: fixed; /* Position fixe */
+    top: 0; right: 0; /* Démarre de la droite */
+    height: 100%; /* Hauteur totale */
+    width: 0; /* Masquée par défaut */
+    overflow-x: hidden; /* Cache le contenu débordant */
+    transition: 0.5s; /* Transition fluide pour ouvrir/fermer */
+    z-index: 999; /* S'assure qu'elle est au-dessus des autres éléments */
+}
+.search-content {
+  padding: 80px 100px 100px 80px; /* Espace intérieur */
+  width: 100%; /* Pleine largeur */
+  background-color: white;
+  height: 100vh;
+}
+
+/* HEADER NAV MENU */
+.nav-menu-sidebar {
+    position: fixed; /* Position fixe */
+    top: 0; left: 0; /* Démarre de la droite */
+    height: 100%; /* Hauteur totale */
+    width: 0; /* Masquée par défaut */
+    overflow-x: hidden; /* Cache le contenu débordant */
+    transition: 0.3s; /* Transition fluide pour ouvrir/fermer */
+    z-index: 999; /* S'assure qu'elle est au-dessus des autres éléments */
+}
+.nav-menu-content {
+  padding: 20px; /* Espace intérieur */
+  width: 100%; /* Pleine largeur */
+  background-color: white;
+  height: 100vh;
+}
+
+/* HOME PAGE VIDEO */
+#HomeVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+}
+#HomeVideo1 {
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+}
+
+
+/* FOOTER STYLE */
+.footer-logo {
+    margin-top: 50px
+}
+.footer-widget__links ul li a {
+    font-size: 12px;
+}
+.footer-widget__title {
+    font-size: 14px;
+    text-decoration: none;
+}
+.footer-widget__links ul li {
+    margin-bottom: 1px;
+}
+.footer-copyright {
+    padding: 5px 0;
+}
+.footer-copyright__content span {
+    font-size: 12px;
+}
+.footer-widget__title {
+    font-size: 12px;
+}
+.footer-col-5 p {
+    font-size: 12px;
+}
+.footer-widget {
+  margin-top: 35px;
+}
+.footer-widget__newsletter input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    margin-bottom: 0px;
+    padding: 0 7px;
+    width: 370px;
+    background-color: transparent;
+}
+
+.tpnavbar { display:none; }
+@keyframes descendreEnHaut {
+  from {
+    top: -100px; /* L'élément commence en dehors de la vue en haut */
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.divAnime {
+  position: relative;
+  animation-name: descendreEnHaut;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; /* Garde l'élément dans l'état final après l'animation */
+  /* Assurez-vous que l'élément est initialement hors de la vue */
+  top: -100px;
+  opacity: 0;
+}
+.breadcrumb__area { display: none; }
+.swiper-slide img {
+    width: 100%;
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    object-fit: cover; /* Ajuste l'image pour remplir le conteneur en conservant son ratio d'aspect */
+}
+/* MOBILE STYLE */
+
+element.style {
+}
+.tpsideinfo.tp-sidebar-opened {
+    transform: translateX(0);
+}
+.tpsideinfo {
+    width: 100%;
+}
+@media (max-width: 767px)
+.tpsideinfo {
+    width: 275px;
+}
+.tpsideinfo {
+    background: white;
+}
+.mobile-menu-container .mobile-menu-nav ul li a {
+    color: #000;
+}
+.mobile-menu-container .mobile-menu-nav>ul>li>a {
+    text-align: center;
+}
+.tpsideinfo__close {
+    background-color: white;
+}
+.tpsideinfo__close, .tpsideinfo__search-title {
+    color: #000;
+}
+.tpcontact__support {
+  display: none;
+}
+.collection-section {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.collection-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.collection-text {
+  text-align: center;
+  color: white;
+}
+
+.collection-section.first {
+  background-image: url('http://homolog.test/storage/2024/collection-bg.jpg');
+}
+.collection-section.first .collection-text {
+  top: 10%;
+  left: 20%;
+  position: relative;
+  color: white;
+}
+
+.collection-section.second {
+  background-image: url('http://homolog.test/storage/2024/collection-bg-2.jpg');
+}
+.collection-section.second h2 {
+  font-size: 21px;
+}
+
+.collection-section.third {
+  background-image: url('http://homolog.test/storage/2024/collection-bg-3.jpg');
+}
+.collection-section.third .collection-text {
+  top: 35%;
+  left: 25%;
+  position: relative;
+  color: black;
+}
+
+.collection-section.fourth {
+  background-image: url('http://homolog.test/storage/2024/collection-bg-4.png');
+}
+
+.btn-rdv {
+  padding: 15px !important;
+  border-radius: 0 !important;
+  border: none;
+  background-color: #3b3b32;
+  color: white;
+}

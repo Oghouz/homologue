@@ -1,0 +1,78 @@
+if(window.location.pathname != "/") {
+  document.getElementById('home_page_logo_text').style.color = "#000000";
+}
+
+function openNavMenu(title, id) {
+  document.getElementById('navMenuSidebar').style.width = "100%";
+  document.getElementById('nav-menu-title').innerHTML = title;
+  if(id){
+    console.log("has child");
+    var divs = document.querySelectorAll('.nav-menu-childs');
+    divs.forEach(function(div) {
+        div.style.display = 'none';
+    });
+  	document.getElementById('nav-menu-child-'+id).style.display = "block";
+  } else {
+    console.log("no child");
+  }
+  
+}
+function closeNavMenu() {
+  document.getElementById('navMenuSidebar').style.width = "0";
+}
+  
+window.addEventListener('scroll', function() {
+    var logo = document.getElementById('logo');
+    var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollPosition > 100) { // Disparition du logo après un certain défilement
+        logo.style.opacity = '0';
+    } else {
+        logo.style.opacity = '1';
+        // Diminution de la taille du logo lorsqu'on revient en haut
+        var newSize = Math.max(20, 25 - scrollPosition / 5); // Diminue jusqu'à une taille minimale
+        logo.style.fontSize = newSize + 'px';
+    }
+});
+document.getElementById('closeSearch').addEventListener('click', function() {
+    document.getElementById('searchSidebar').style.width = "0";
+});
+document.addEventListener('DOMContentLoaded', function() {
+    function triggerAnimation() {
+        var div = document.querySelector('.divAnime');
+        if (div && window.pageYOffset === 0) {
+            div.style.animation = 'none';
+            void div.offsetWidth;
+            div.style.animation = 'descendreEnHaut 1s forwards';
+        }
+    }
+    window.addEventListener('scroll', triggerAnimation);
+});
+function toggleMenu() {
+  let menu = document.querySelector('.menu-overlay');
+  let icon = document.querySelector('.menu-icon i');
+
+  if (menu.classList.contains('active')) {
+    menu.classList.remove('active');
+    icon.classList.remove('fa-xmark');
+    icon.classList.add('fa-bars');
+  } else {
+    menu.classList.add('active');
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-xmark');
+  }
+}
+function toggleMenu() {
+  let menu = document.querySelector('.menu-overlay');
+  let icon = document.querySelector('.menu-icon i');
+
+  if (menu.classList.contains('active')) {
+    menu.classList.remove('active');
+    icon.classList.remove('fa-xmark');
+    icon.classList.add('fa-bars');
+  } else {
+    menu.classList.add('active');
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-xmark');
+  }
+}
