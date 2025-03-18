@@ -1,6 +1,6 @@
 @if(theme_option('sticky_header_enabled', 'yes') == 'yes')
     <div id="header-sticky" class="logo-area tp-sticky-one mainmenu-5">
-        {!! Theme::partial('header-middle') !!}
+        {{-- {!! Theme::partial('header-middle') !!} --}}
     </div>
 @endif
 

@@ -5,8 +5,8 @@
 
     <main>
         {!! Theme::partial('breadcrumb') !!}
-        <div class="pt-80 pb-80">
-            <div class="container">
+        <div class="pt-80 pb-80 mt-130">
+            <div class="">
                 {!! Theme::content() !!}
             </div>
         </div>

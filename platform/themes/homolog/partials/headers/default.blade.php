@@ -1,4 +1,68 @@
-<header>
+<header class="text-center visible mt-50" id="main-header">
+    <div class="row">
+        <div class="col">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <i class="bi bi-list"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            {!! Menu::renderMenuLocation('main-menu', ['view' => 'menu']) !!}
+        </div>
+        <div class="col-4">
+            
+            <a href="{{ route('public.index') }}" id="header-logo" @if(\Request::route()->getName() != 'public.index') class="text-dark" @endif>
+                <sapn style="font-size: 4em;font-family: emoji;">HOMOLOG</sapn>
+                <hr style="color: transparent;margin: 5px 0;">
+                <span style="font-size: 2em;font-family: emoji;">PARIS</span>
+            </a>
+        </div>
+        <div class="col-4">
+            <div class="menu-icon-search" onclick="toggleSearch()">
+                <i class="bi bi-search"></i>
+            </div>
+            <ul id="nav-right">
+                <li><a href="#" onclick="toggleSearch()">Recherche</a></li>
+                <li><a href="{{route('customer.login')}}">Compte</a></li>
+                <li><a href="#">Ma Sélection</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="menu-overlay" id="menuOverlay">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-1">
+                <div class="vertical-line"></div>
+            </div>
+            <div class="col-md-7">
+                <img src="http://homolog.test/storage/2024/menu-img.jpg" class="img-fluid" alt="" width="70%">
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- SEARCH OVERLAY --}}
+<div class="search-overlay d-flex justify-content-center align-items-center vh-100" id="searchOverlay">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6"> <!-- Réduction de la largeur -->
+                <form action="/products" method="get">
+                    <div class="input-group">
+                        <input type="text" name="q" class="form-control search-input" placeholder="Rechercher" autocomplete="off">
+                        <button class="btn border-0" type="submit">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- <header>
     {!! Theme::partial('header-top') !!}
     <div class="mainmenuarea d-none d-xl-block divAnime">
         <div class="container-fluid">
@@ -35,6 +99,6 @@
             </div>
         </div>
     </div>
-</header>
+</header> --}}
 
 {!! Theme::partial('navbar') !!}

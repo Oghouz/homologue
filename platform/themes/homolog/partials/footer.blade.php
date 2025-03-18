@@ -1,8 +1,17 @@
 @php
-    $footerColor = Theme::get('footerColor');
+$footerColor = Theme::get('footerColor');
 @endphp
 
 <footer>
+    <div class="footer-area pt-65">
+        <div class="container">
+            <div class="row">
+                {!! dynamic_sidebar('footer_sidebar') !!}
+            </div>
+        </div>
+    </div>
+</footer>
+{{-- <footer>
     <div
         class="footer-area pt-65"
         style="
@@ -32,4 +41,4 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> --}}

@@ -14,7 +14,18 @@
                 --primary-color-rgb: {{ implode(',', BaseHelper::hexToRgb($primaryColor)) }};
                 --primary-font: '{{ $primaryFont }}', sans-serif;
             }
+            @font-face {
+                font-family: 'Cormorant-Light';
+                src: url({{asset('storage/fonts/Cormorant-Light.ttf')}}) format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            html, body, main, p, h1, h2, h3, h4, h5, h6, a, span, div, li, ul, ol, button, input, textarea {
+                font-family: 'Cormorant-Light' !important;
+            }
         </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
 
         {!! Theme::header() !!}
     </head>
@@ -50,11 +61,11 @@
         {!! Theme::footer() !!}
 
         @if (
-            session()->has('success_msg')
-            || session()->has('error_msg')
-            || (isset($errors) && $errors->count() > 0)
-            || isset($error_msg)
-        )
+    session()->has('success_msg')
+    || session()->has('error_msg')
+    || (isset($errors) && $errors->count() > 0)
+    || isset($error_msg)
+)
             <script type="text/javascript">
                 window.onload = function() {
                     @if (session()->has('success_msg'))
@@ -75,7 +86,119 @@
                         @endforeach
                     @endif
                 };
-            </script>
+            </script> 
         @endif
+    <script type="text/javascript">
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        const headerText = document.getElementById('header-logo');
+
+        window.addEventListener('scroll', function () {
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+            header.classList.add('hidden');
+            header.classList.remove('visible');
+        } else {
+            header.classList.remove('hidden');
+            header.classList.add('visible');
+        }
+
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+
+        window.addEventListener('load', function () {
+        header.classList.add('visible');
+        });
+
+        document.getElementById('menuOverlay').addEventListener('click', function (event) {
+        if (event.target === this) {
+            toggleMenu();
+        }
+        });
+
+        const sections = document.querySelectorAll('.collection-section');
+        const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            }
+        });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        const menuIconSearch = document.querySelector('.menu-icon-search i'); 
+        function toggleMenu() {
+            const menuOverlay = document.getElementById('menuOverlay');
+            const menuIcon = document.querySelector('.menu-icon i');  // Icône de menu
+            
+            const navLeft = document.getElementById('nav-left');
+            const navRight = document.getElementById('nav-right');
+
+            if (menuOverlay.classList.contains('active')) {
+                menuOverlay.classList.remove('active');
+                menuIcon.classList.remove('bi-x-lg', 'text-dark');
+                menuIcon.classList.add('bi-list');
+                menuIconSearch.classList.add('bi-search')
+
+                navLeft.classList.remove('show');  // Cache navLeft
+                navRight.classList.remove('show');  // Cache navRight
+
+                headerText.style.color = 'white';
+
+                document.body.style.overflow = '';
+
+                setTimeout(() => {
+                    menuOverlay.style.display = 'none';
+                }, 500);
+            } else {
+                menuOverlay.style.display = 'flex';
+
+                setTimeout(() => {
+                    menuOverlay.classList.add('active');
+                    menuIcon.classList.remove('bi-list');
+                    menuIconSearch.classList.remove('bi-search');
+                    menuIcon.classList.add('bi-x-lg', 'text-dark');
+
+                    navLeft.classList.add('show');  
+                    navRight.classList.add('show'); 
+
+                    headerText.style.color = 'black';
+                    document.body.style.overflow = 'hidden';
+                }, 10);
+            }
+        }
+        function toggleSearch(){
+            const searchOverlay = document.getElementById('searchOverlay');
+            if (searchOverlay.classList.contains('active')) {
+                searchOverlay.classList.remove('active');
+                searchOverlay.style.color = 'white';
+                headerText.style.color = 'white';
+                menuIconSearch.classList.remove('bi-x-lg', 'text-dark');
+                menuIconSearch.classList.add('bi-search');
+                document.body.style.overflow = '';
+
+                setTimeout(() => {
+                    searchOverlay.style.display = 'none';
+                }, 500);
+                
+            } else {
+                searchOverlay.style.display = 'flex';
+                menuIconSearch.classList.add('bi-x-lg', 'text-dark');
+                menuIconSearch.classList.remove('bi-search');
+                document.body.style.overflow = 'hidden';
+
+                setTimeout(() => {
+                    searchOverlay.classList.add('active');
+                    headerText.style.color = 'black';
+                }, 10);
+                
+            }
+        }
+
+    </script>
     </body>
 </html>
