@@ -23,10 +23,10 @@ class AppointmentServiceProvider extends ServiceProvider
             ->loadAndPublishViews()
             ->loadRoutes();
 
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', 'plugins/appointment');
+
         if (defined('LANGUAGE_ADVANCED_MODULE_SCREEN_NAME')) {
-            \Botble\LanguageAdvanced\Supports\LanguageAdvancedManager::registerModule(Appointment::class, [
-                'name',
-            ]);
+            \Botble\LanguageAdvanced\Supports\LanguageAdvancedManager::registerModule(Appointment::class, ['name']);
         }
 
         $this->app['events']->listen(RouteMatched::class, function () {
@@ -41,4 +41,5 @@ class AppointmentServiceProvider extends ServiceProvider
             ]);
         });
     }
+
 }

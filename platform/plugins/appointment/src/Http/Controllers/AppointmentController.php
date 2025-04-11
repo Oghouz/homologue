@@ -6,7 +6,6 @@ use Botble\Appointment\Http\Requests\AppointmentRequest;
 use Botble\Appointment\Models\Appointment;
 use Botble\Base\Facades\PageTitle;
 use Botble\Base\Http\Controllers\BaseController;
-use Botble\Theme\Facades\Theme;
 use Illuminate\Http\Request;
 use Exception;
 use Botble\Appointment\Tables\AppointmentTable;
@@ -16,15 +15,16 @@ use Botble\Base\Events\UpdatedContentEvent;
 use Botble\Base\Http\Responses\BaseHttpResponse;
 use Botble\Appointment\Forms\AppointmentForm;
 use Botble\Base\Forms\FormBuilder;
-//use Theme;
+use Theme;
 
 class AppointmentController extends BaseController
 {
 
-    public function form(Request $request)
+    public function form()
     {
-        return Theme::scope('custom-appointment', ['content' => view('plugins/appointment::form')])->render();
-
+        $html = view('plugins/appointment::form')->render();
+        Theme::set('content', $html);
+        return Theme::scope('custom-appointment')->render();
     }
 
     public function clientStore(Request $request, BaseHttpResponse $response)
