@@ -4,7 +4,8 @@
     </div>
 @endif
 
-<div id="header-tab-sticky" class="tp-md-lg-header d-none d-md-block d-xl-none pt-30 pb-30">
+{{-- <div id="header-tab-sticky" class="tp-md-lg-header d-none d-md-block d-xl-none pt-30 pb-30"> --}}
+<div id="header-tab-sticky" class="tp-md-lg-header d-none pt-30 pb-30">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4 d-flex align-items-center">
@@ -62,7 +63,7 @@
         <div class="row align-items-center">
             <div class="col-3 d-flex align-items-center">
                 <div class="flex-auto header-canvas">
-                    <button class="tp-menu-toggle text-light" title="open">
+                    <button class="tp-menu-toggle text-dark" title="open">
                         <i class="far fa-bars"></i>
                     </button>
                 </div>
@@ -71,7 +72,7 @@
                 <div class="col-6">
                     <div class="text-center logo">
                         <a href="{{ route('public.index') }}">
-                            <a href="{{ route('public.index') }}" id="home_page_logo_text" style="color: white">
+                            <a href="{{ route('public.index') }}" id="home_page_logo_text" style="">
                                 <sapn style="font-size: 1.5em;font-family: emoji;">HOMOLOG</sapn>
                                 <br>
                                 <span style="font-size: 0.9em;font-family: emoji;">PARIS</span>
@@ -85,7 +86,7 @@
             @if (is_plugin_active('ecommerce'))
                 <div class="col-3">
                     <div class="header-meta-info d-flex align-items-center justify-content-end ml-25">
-                        <button class="header-cart p-relative tp-search-sidebar-toggle text-light" title="search">
+                        <button class="header-cart p-relative tp-search-sidebar-toggle text-dark" title="search">
                             <i class="fal fa-search"></i>
                         </button>
                     </div>
@@ -165,7 +166,7 @@
     </button>
 
     <div class="tpsideinfo__nabtab mt-30 mb-4">
-        {!! Theme::partial('mobile.categories-tab-content', compact('categories')) !!}
+        {{-- {!! Theme::partial('mobile.categories-tab-content', compact('categories')) !!} --}}
     </div>
 </div>
 

@@ -1,28 +1,29 @@
-<header class="text-center visible mt-50" id="main-header">
+<header class="text-center visible mt-50 d-none d-sm-block" id="main-header">
     <div class="row">
         <div class="col">
             <div class="menu-icon" onclick="toggleMenu()">
-                <i class="bi bi-list"></i>
+                <i class="bi bi-list" style="font-size: 1.6em"></i>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-4">
-            {!! Menu::renderMenuLocation('main-menu', ['view' => 'menu']) !!}
-        </div>
-        <div class="col-4">
-            
+        <div class="col">
             <a href="{{ route('public.index') }}" id="header-logo" @if(\Request::route()->getName() != 'public.index') class="text-dark" @endif>
                 <sapn style="font-size: 4em;font-family: emoji;">HOMOLOG</sapn>
                 <hr style="color: transparent;margin: 5px 0;">
                 <span style="font-size: 2em;font-family: emoji;">PARIS</span>
             </a>
         </div>
-        <div class="col-4">
+    </div>
+    <div class="row">
+        <div class="col-2">
+            {!! Menu::renderMenuLocation('main-menu', ['view' => 'menu']) !!}
+        </div>
+        <div class="col-10">
             <div class="menu-icon-search" onclick="toggleSearch()">
-                <i class="bi bi-search"></i>
+                <i class="bi bi-search" style="display: none;"></i>
             </div>
-            <ul id="nav-right">
+            <ul id="nav-right" style="display: none;">
                 <li><a href="#" onclick="toggleSearch()">Recherche</a></li>
                 <li><a href="{{route('customer.login')}}">Compte</a></li>
                 <li><a href="#">Ma Sélection</a></li>
@@ -33,12 +34,14 @@
 <div class="menu-overlay" id="menuOverlay">
     <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-1">
+            <div class="col-md-1"></div>
+            <div class="col-md-1" style="max-width: 10px;padding: 0;">
                 <div class="vertical-line"></div>
             </div>
-            <div class="col-md-7">
-                <img src="http://homolog.test/storage/2024/menu-img.jpg" class="img-fluid" alt="" width="70%">
+            <div class="col-md-10">
+                <div class="image-container">
+                    <img src="https://homolog.fr/storage/2025/menu/menu-1.jpg">
+                </div>
             </div>
         </div>
     </div>
