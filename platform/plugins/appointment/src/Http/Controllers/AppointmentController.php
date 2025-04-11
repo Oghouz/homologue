@@ -22,10 +22,15 @@ class AppointmentController extends BaseController
 
     public function form()
     {
+        // Rendu de ta vue plugin
         $html = view('plugins/appointment::form')->render();
-        Theme::set('content', $html);
-        return Theme::scope('custom-appointment')->render();
+
+        // Injecte le HTML dans une variable passée au thème
+        return Theme::scope('custom-appointment', [
+            'appointmentHtml' => $html,
+        ])->render();
     }
+
 
     public function clientStore(Request $request, BaseHttpResponse $response)
     {

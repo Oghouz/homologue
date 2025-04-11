@@ -15,6 +15,11 @@ Route::group(['namespace' => 'Botble\Appointment\Http\Controllers', 'middleware'
 
 });
 
+Route::get('/test-rdv', function () {
+    Theme::set('content', view('plugins/appointment::form')->render());
+    return Theme::scope('custom-appointment')->render();
+});
+
 Route::group(['middleware' => ['web', 'auth'], 'namespace' => 'Botble\Appointment\Http\Controllers'], function () {
     Route::get('prendre-rendez-vous', 'AppointmentController@index')->name('appointment.index');
     Route::get('prendre-rendez-vous', 'AppointmentController@form')->name('appointment.form');
