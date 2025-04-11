@@ -25,6 +25,7 @@ class AppointmentController extends BaseController
         $html = view('plugins/appointment::form')->render();
         Theme::set('content', $html);
         return Theme::scope('custom-appointment')->render();
+        
     }
 
     public function clientStore(Request $request, BaseHttpResponse $response)
